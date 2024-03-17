@@ -32,9 +32,9 @@ public class Order {
     private Double totalAmount;
 
     @OneToMany(mappedBy = "order",
-              cascade = {CascadeType.PERSIST,CascadeType.MERGE}
-              )
-    private List<OrderItem>orderItems=new ArrayList<>();
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE}
+    )
+    private List<OrderItem> orderItems = new ArrayList<>();
 }
 //do not use order as table name --The word "order" is a reserved keyword in most SQL databases, including MySQL. Using reserved keywords as table or column names can lead to conflicts and errors during DDL execution.
 /*Hibernate: create table order (order_id bigint not null auto_increment, order_status varchar(255), email varchar(255), order_date date, total_amount double precision, primary key (order_id)) engine=InnoDB

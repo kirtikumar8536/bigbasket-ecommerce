@@ -18,10 +18,10 @@ public class Categories {
     private String categoryName;
 
     @OneToMany(mappedBy = "categories",
-            cascade = {CascadeType.PERSIST,CascadeType.MERGE},
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
             fetch = FetchType.LAZY,
             orphanRemoval = true
     )
-    private List<Product> productList=new ArrayList<>();
+    private List<Product> productList = new ArrayList<>();
     //completed
 }

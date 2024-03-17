@@ -28,15 +28,15 @@ public class OrderItem {
 
     @ManyToOne
     @JoinColumn(name = "oder_id",
-                nullable = false,
-    referencedColumnName = "order_id",
-    foreignKey = @ForeignKey(name = "order_orderitem_fk"))
+            nullable = false,
+            referencedColumnName = "order_id",
+            foreignKey = @ForeignKey(name = "order_orderitem_fk"))
     private Order order;
 
     @ManyToOne
     @JoinColumn(name = "product_id",
-                referencedColumnName = "product_id",
-                foreignKey = @ForeignKey(name = "product_orderitems_fk"))
+            referencedColumnName = "product_id",
+            foreignKey = @ForeignKey(name = "product_orderitems_fk"))
     private Product product;
 
 }

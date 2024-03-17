@@ -20,8 +20,8 @@ public class Cart {
     private Double totalPrice = 0.0;
 
     @OneToMany(mappedBy = "cart",
-               cascade = {CascadeType.PERSIST,CascadeType.MERGE},
-               orphanRemoval = true,
-               fetch = FetchType.LAZY) //default is Lazy
-    private List<CartItem> cartItemList=new ArrayList<>();
+            cascade = {CascadeType.PERSIST, CascadeType.MERGE},
+            orphanRemoval = true,
+            fetch = FetchType.LAZY) //default is Lazy
+    private List<CartItem> cartItemList = new ArrayList<>();
 }

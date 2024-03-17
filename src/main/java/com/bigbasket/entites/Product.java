@@ -48,9 +48,17 @@ public class Product {
               fetch = FetchType.EAGER)
     private List<CartItem> products = new ArrayList<>();
 
+    @OneToMany(mappedBy = "product",
+              cascade = { CascadeType.PERSIST,
+                           CascadeType.MERGE })
+//           ,fetch = FetchType.EAGER)
+    private List<OrderItem> orderItems = new ArrayList<>();
 }
-/*
+// in owning entity mappedBy =name of the field in that entity
+/* in refrencedColumnName=name of column in that table (categories)
 [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]:
 Invocation of init method failed; nested exception is org.hibernate.MappingException:
 Unable to find column with logical name: productId in org.hibernate.mapping.Table(product)
 and its related supertables and secondary tables*/
+
+//simultaneously fetch multiple bags:[com.bigbasket.entites.Product.products, com.bigbasket.entites.Product.orderItems]

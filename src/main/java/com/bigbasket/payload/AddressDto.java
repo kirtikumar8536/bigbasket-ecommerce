@@ -6,6 +6,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class AddressDto {
+
     private Long addressId;
     private String street;
     private String buildingName;

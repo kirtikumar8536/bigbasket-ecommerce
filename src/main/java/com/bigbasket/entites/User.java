@@ -27,6 +27,7 @@ public class User {
     private String email;
     @Column(name = "password")
     private String password;
+
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(name = "user_address",
             joinColumns = @JoinColumn(name = "user_id"),
